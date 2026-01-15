@@ -1,0 +1,506 @@
+
+/* Simple Banner */
+.page-banner {
+    background: var(--dark);
+    padding: 60px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.page-banner h1 { font-size: 3rem; margin-bottom: 10px; }
+
+/* Split Row Layout */
+.split-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+
+/* Reverse the order of every second row */
+.split-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.split-column {
+    flex: 1;
+}
+
+.text-side h2 {
+    font-size: 2.5rem;
+    color: var(--dark);
+    margin: 15px 0 25px;
+}
+
+.text-side p {
+    margin-bottom: 20px;
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+/* Image Frame Decoration */
+.frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.frame img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.frame:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Fix for About Us */
+@media (max-width: 768px) {
+    .split-row, .split-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+}/* Hero Grid Fix */
+.hero { padding: 100px 0; background: linear-gradient(135deg, #fff 0%, #eef2ff 100%); }
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; color: var(--dark); }
+.highlight { color: var(--primary); }
+.hero-text p { font-size: 1.2rem; margin-bottom: 30px; max-width: 500px; }
+
+.image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+.hero-image img { width: 100%; display: block; }
+
+/* Buttons */
+.hero-actions { display: flex; gap: 15px; }
+.btn { padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: var(--trans); display: inline-block; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+.btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+/* Trust Bar Grid */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.info-card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-actions { justify-content: center; }
+}
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    top: 20%;
+    right: 5%;
+    z-index: 10;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Footer Styling */
+.footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: 80px 0 20px;
+}
+
+.footer h4 { margin-bottom: 1.5rem; color: var(--primary); }
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 0.8rem; }
+.footer a { color: #94a3b8; text-decoration: none; transition: 0.3s; }
+.footer a:hover { color: var(--white); }
+
+@media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero-content h1 { font-size: 2.5rem; }
+}
+
+/* Services Grid - Mobile First */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* About Page Flexbox Layout */
+.about-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 6rem;
+    flex-wrap: wrap; /* Critical for responsiveness */
+}
+
+.about-row.reverse { flex-direction: row-reverse; }
+
+.about-text, .about-image { flex: 1; min-width: 300px; }
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+/* Contact Page Layout */
+.contact-wrapper {
+    display: flex;
+    gap: 3rem;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info { flex: 1; background: var(--dark); color: white; padding: 2rem; border-radius: 10px; }
+.contact-form { flex: 2; }
+
+/* Form Validation States */
+.form-group { margin-bottom: 1.5rem; position: relative; }
+
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+/* Advanced CSS: Using :invalid and :focus */
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+.form-group input:valid:not(:placeholder-shown) {
+    border-color: #22c55e;
+}
+
+.error-msg {
+    color: #ef4444;
+    font-size: 0.8rem;
+    display: none;
+    margin-top: 0.3rem;
+}
+
+/* Show error message only when input is invalid and not focused */
+.form-group input:invalid:not(:placeholder-shown):not(:focus) + .error-msg {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper { flex-direction: column; }
+    .about-row { text-align: center; }
+}
+/* --- Product Grid Styles --- */
+
+.product-grid {
+    display: grid;
+    /* This creates a responsive grid that automatically wraps cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid #edf2f7;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.product-img {
+    height: 250px;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.product-info h3 {
+    font-size: 1.25rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.product-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.btn-sm {
+    padding: 10px 20px;
+    background: var(--dark);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--trans);
+}
+
+.btn-sm:hover {
+    background: var(--primary);
+}
+
+/* Card Styling */
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+
+
+.popular-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+/* --- Global Reset --- */
+:root {
+    --primary: #6366f1;
+    --dark: #0f172a;
+    --white: #ffffff;
+    --text: #334155;
+    --gray: #e2e8f0;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* --- 1. Pricing Toggle Fix (Screenshot fix) --- */
+/* --- 1. Layout & Responsiveness --- */
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+}
+
+.price-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 350px; /* Limits width on desktop */
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    border: 2px solid transparent; /* Prepare for border transition */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pricing-toggle {
+        flex-direction: row; /* Keep toggle horizontal even on mobile */
+    }
+}
+
+
+/* --- 2. Toggle Switch Styling --- */
+.pricing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    cursor: pointer;
+}
+
+.slider {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; width: 26px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+
+/* --- 3. The "No-JS" Logic --- */
+
+/* Default State (Unchecked = Monthly) */
+.amount.yearly {
+    display: none; /* Hide yearly prices initially */
+}
+.amount.monthly {
+    display: inline-block;
+}
+
+/* LOGIC: When #price-toggle is CHECKED...
+   Find the sibling .pricing-grid, then find the amounts inside it.
+*/
+
+/* Rotate the toggle switch knob */
+#price-toggle:checked ~ .pricing-toggle .slider {
+    background-color: #2196F3;
+}
+#price-toggle:checked ~ .pricing-toggle .slider:before {
+    transform: translateX(26px);
+}
+
+/* Highlight the "Yearly" text label */
+#price-toggle:checked ~ .pricing-toggle .yearly-label {
+    color: #2196F3;
+    font-weight: bold;
+}
+
+/* Swap the Prices */
+#price-toggle:checked ~ .pricing-grid .amount.monthly {
+    display: none;
+}
+#price-toggle:checked ~ .pricing-grid .amount.yearly {
+    display: inline-block;
+    /* Add Animation when price appears */
+    animation: flipIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+
